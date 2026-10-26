@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+      {% block title %}
+        Page
+      {% endblock %}
+
+    </title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src=" {% static 'js/main.js' %}" defer></script>
+</head>
+<body>
+  <nav>
+    <a href="/">☺</a> |
+    <a href="{% url 'about' %}">☏</a> |
+    <a href="{% url 'post_list' %}">📱</a>
+  </nav>
+
+  <main>
+    {% block content %}
+    {% endblock %}
+  </main>
+
+</body>
+</html>
