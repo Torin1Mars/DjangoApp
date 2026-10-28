@@ -1,0 +1,22 @@
+{% extends 'projectApp/layout.html' %}
+
+{% block title %}
+Post
+{% endblock %}
+
+{% block content%}
+
+<section>
+    <h1>Page posts:</h1>
+    <article class="post">
+        <h2>
+            <a href="{%  url 'posts:page' slug=post.slug %}">
+                {{ post.title }}
+            </a>
+        </h2>
+        <p>{{ post.date }}</p>
+        <p>{{ post.body }}</p>
+    </article>
+
+</section>
+{% endblock %}

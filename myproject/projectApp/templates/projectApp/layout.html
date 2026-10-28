@@ -15,9 +15,16 @@
 </head>
 <body>
   <nav>
-    <a href="/">☺</a> |
-    <a href="{% url 'about' %}">☏</a> |
-    <a href="{% url 'post_list' %}">📱</a>
+      <a href="/">
+          <span role="img" aria-label="Home">🏠</span>
+      </a> |
+      <a href="/about">
+          <span role="img" aria-label="About">😀</span>
+      </a> |
+      <a href="{% url 'posts:post_list' %}">
+          <span role="img" aria-label="Posts">📰</span>
+
+      </a>
   </nav>
 
   <main>

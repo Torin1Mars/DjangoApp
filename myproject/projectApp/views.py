@@ -14,4 +14,8 @@ def about(request):
 
 def post_list(request):
     postsData = Post.objects.all().order_by('date')
-    return render(request, 'projectApp/post.html', {'posts':postsData})
+    return render(request, 'projectApp/post_list.html', {'posts':postsData})
+
+def post_page(request, slug):
+    post = Post.objects.get(slug=slug)
+    return render(request, 'projectApp/post_page.html', {'post': post})
