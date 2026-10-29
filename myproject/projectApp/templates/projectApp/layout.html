@@ -16,14 +16,16 @@
 <body>
   <nav>
       <a href="/">
-          <span role="img" aria-label="Home">🏠</span>
+          <span role="img" aria-label="Home" title="Home">🏠</span>
       </a> |
       <a href="/about">
-          <span role="img" aria-label="About">😀</span>
+          <span role="img" aria-label="About" title="About">😀</span>
       </a> |
       <a href="{% url 'posts:post_list' %}">
-          <span role="img" aria-label="Posts">📰</span>
-
+          <span role="img" aria-label="Posts" title="Posts">📰</span>
+      </a> |
+      <a href="{% url 'users:registration' %}" title="Registration">
+          <span role="img" aria-label="Registration">👥</span>
       </a>
   </nav>
 
@@ -34,3 +36,4 @@
 
 </body>
 </html>
+
