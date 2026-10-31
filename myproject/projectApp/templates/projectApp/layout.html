@@ -7,7 +7,6 @@
       {% block title %}
         Page
       {% endblock %}
-
     </title>
 
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
@@ -18,15 +17,24 @@
       <a href="/">
           <span role="img" aria-label="Home" title="Home">🏠</span>
       </a> |
-      <a href="/about">
-          <span role="img" aria-label="About" title="About">😀</span>
+      <a href="{% url 'posts:about' %}">
+          <span role="img" aria-label="About" title="About">❓</span>
       </a> |
       <a href="{% url 'posts:post_list' %}">
           <span role="img" aria-label="Posts" title="Posts">📰</span>
       </a> |
       <a href="{% url 'users:registration' %}" title="Registration">
           <span role="img" aria-label="Registration">👥</span>
-      </a>
+      </a> |
+      <a href="{% url 'users:login' %}" title="User Login">
+          <span role="img" aria-label="User Login">🔒</span>
+      </a> |
+      <form class="logout" action="{% url 'users:logout' %}" method="post">
+          {% csrf_token %}
+          <button class="logout-button" aria-label="User Logout" title="User Logout">
+              🔓
+          </button>
+      </form>
   </nav>
 
   <main>
@@ -36,4 +44,3 @@
 
 </body>
 </html>
-

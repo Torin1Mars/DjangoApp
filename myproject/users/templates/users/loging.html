@@ -1,0 +1,18 @@
+{% extends 'projectApp/layout.html' %}
+
+{% block title %}
+Loging
+{% endblock %}
+
+{% block content%}
+
+<section>
+  <h1>Login :</h1>
+
+  <form class="form-with-validation" action="/users/loging/" method="post">
+    {% csrf_token %}
+    {{form}}
+    <button class="form-submit">Submit</button>
+  </form>
+</section>
+{% endblock %}
